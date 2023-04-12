@@ -13,4 +13,18 @@ public class FridgeAlgorithm {
     public void fridgeAlgorithm(Fridge fridge) {
         
     }
+
+    public void openFridge(Fridge fridge) {
+        
+    }
+
+    public void closeFridge(Fridge fridge) {
+        
+    }
+    public void getMilk(Fridge fridge) {
+        
+    }
+
+
+
 }
