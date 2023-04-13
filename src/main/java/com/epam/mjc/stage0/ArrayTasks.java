@@ -191,6 +191,10 @@ public class ArrayTasks {
                         if (arr[k].length<arr[index].length){
                             index = k;
                         }
+                        else if (arr[k].length==arr[index].length){
+                            if (arr[k][0]<arr[index][0])
+                                index = k;
+                        }
                     int son[] = arr[j];
                     arr[j]=arr[index];
                     arr[index]=son;   
@@ -238,7 +242,7 @@ public class ArrayTasks {
 
     public static void main(String[] args) {
         int[][] arr = {
-            {5, 4}, {7}
+            {-13, -905,2312,-723}, {7}
         };
         
         

@@ -11,19 +11,12 @@ public class FridgeAlgorithm {
      * P.S All methods of interaction with the fridge can be found inside the {@see Fridge} class.
      */
     public void fridgeAlgorithm(Fridge fridge) {
-        
+        fridge.open();
+        fridge.getMilk();
+        fridge.close();
     }
 
-    public void openFridge(Fridge fridge) {
-        
-    }
 
-    public void closeFridge(Fridge fridge) {
-        
-    }
-    public void getMilk(Fridge fridge) {
-        
-    }
 
 
 
