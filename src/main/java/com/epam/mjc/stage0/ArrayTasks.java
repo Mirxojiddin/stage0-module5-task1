@@ -123,112 +123,32 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]]
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
-    // private static class MergeSort {
-    //     private static int[] array;
 
-    //     public static void mergeSort(int[] arr) {
-    //         array = arr;
-    //         int len = array.length;
-    //         int[] workspace = new int[len];
-    //         recursiveMergeSort(workspace, 0, len - 1);
-    //     }
-
-    //     private static void recursiveMergeSort(int[] workSpace, int lowerBound,
-    //                                     int upperBound) {
-    //         if (lowerBound == upperBound) {
-    //             return;
-    //         } else {
-    //             int mid = (lowerBound + upperBound) / 2;
-    //             recursiveMergeSort(workSpace, lowerBound, mid);
-    //             recursiveMergeSort(workSpace, mid + 1, upperBound);
-    //             merge(workSpace, lowerBound, mid + 1, upperBound);
-    //         }
-    //     }
-
-    //     private static void merge(int[] workspace, int lowPointer,
-    //                        int highPointer, int upperBound) {
-    //         int i = 0;
-    //         int lowerBound = lowPointer;
-    //         int mid = highPointer - 1;
-    //         int numberOfItems = upperBound - lowerBound + 1;
-
-    //         while (lowPointer <= mid && highPointer <= upperBound) {
-    //             if (array[lowPointer] < array[highPointer]) {
-    //                 workspace[i++] = array[lowPointer++];
-    //             } else {
-    //                 workspace[i++] = array[highPointer++];
-    //             }
-    //         }
-
-    //         while (lowPointer <= mid)
-    //             workspace[i++] = array[lowPointer++];
-
-    //         while (highPointer <= upperBound)
-    //             workspace[i++] = array[highPointer++];
-
-    //         for (i = 0; i < numberOfItems; i++)
-    //             array[lowerBound + i] = workspace[i];
-    //     }
-    // }
-
-    public int[][] sortRaggedArray(int[][] arr) {
-        int arrat_len = arr.length;
-        for (int i=0; i<arrat_len; i++)
-            for (int j=0; j<arr[i].length; j++){
-                int index = j;
-                for (int k = j+1; k<arr[i].length; k++)
-                    if (arr[i][k]<arr[i][index])
-                        index = k;
-                int son = arr[i][j];
-                arr[i][j]=arr[i][index];
-                arr[i][index]=son;   
-            }
-            for (int j = 0; j<arrat_len; j++){
-                int index = j;
-                    for (int k = j+1; k<arrat_len; k++)
-                        if (arr[k].length<arr[index].length){
-                            index = k;
-                        }
-                        else if (arr[k].length==arr[index].length){
-                            if (arr[k][0]<arr[index][0])
-                                index = k;
-                        }
-                    int son[] = arr[j];
-                    arr[j]=arr[index];
-                    arr[index]=son;   
-        }
-        for (int i=0; i<arrat_len; i++){
-            for (int j=0; j<arr[i].length; j++)
-                System.out.print(arr[i][j]+" ");
-            System.out.println();
-        }
-        return arr;
-
+    public int[][] sortRaggedArray(int[][] arr) { 
+        for (int i = 0; i < arr.length; i++) { 
+            for (int j = 0; j < arr[i].length; j++) { 
+                for (int k = j + 1; k < arr[i].length; k++) { 
+                    if (arr[i][j] > arr[i][k]) { 
+                        int temp = arr[i][k]; 
+                        arr[i][k] = arr[i][j]; 
+                        arr[i][j] = temp; 
+                    } 
+                } 
+            } 
+        } 
+        for (int i = 0; i < arr.length; i++) { 
+            for (int j = 0; j < arr.length - 1; j++) { 
+                if (arr[j].length > arr[j + 1].length) { 
+                    int[] temp_arr = arr[j]; 
+                    arr[j] = arr[j + 1]; 
+                    arr[j + 1] = temp_arr; 
+                } 
+            } 
+        } 
+        return arr; 
     }
 
-    // public int[][] sortRaggedArray(int arr[][]) {
-    //     int arrat_len = arr.length;
-    //     for (int i=0; i<arrat_len; i++)
-    //         MergeSort.mergeSort(arr[i]); 
-        
-    //     for (int j = 0; j<arrat_len; j++){
-    //             int index = j;
-    //                 for (int k = j+1; k<arrat_len; k++)
-    //                     if (arr[k].length<arr[index].length){
-    //                         index = k;
-    //                     }
-    //                 int son[] = arr[j];
-    //                 arr[j]=arr[index];
-    //                 arr[index]=son;   
-    //     }
-    //     // for (int i=0; i<arrat_len; i++){
-    //     //     for (int j=0; j<arr[i].length; j++)
-    //     //         System.out.print(arr[i][j]+" ");
-    //     //     System.out.println();
-    //     // } 
-      
-    //     return arr;
-    //   }
+
 
 /*
  * 
