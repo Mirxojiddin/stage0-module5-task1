@@ -110,8 +110,6 @@ public class ArrayTasks {
         for (int k=0, i=0; i<arr.length; i++)
             if (arr[i]>0)
                 result[k++]=arr[i];
-        for (int i=0; i<j; i++)
-            System.out.print(result[i]+ " ");
         return result;
     }
 
@@ -242,7 +240,9 @@ public class ArrayTasks {
 
     public static void main(String[] args) {
         int[][] arr = {
-            {-13, -905,2312,-723}, {7}
+            {-13, -908,2312,-723},
+            {-13, -905,2312,-723}, 
+             {7}
         };
         
         
